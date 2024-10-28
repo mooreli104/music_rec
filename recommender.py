@@ -1,6 +1,6 @@
 import base64, requests, sys
 import spotipy
-import librosa
+from music_genre_classification import * 
 from spotipy.oauth2 import SpotifyClientCredentials
 
 def print_songs(l:list): 
@@ -12,9 +12,6 @@ def print_songs(l:list):
 
   for key, value in songs.items():
     print(f"{key}: {value}")
-
-# def get_genre(mp3):
-#   audio = 
 
 
 def main():
