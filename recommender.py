@@ -19,6 +19,7 @@ def main():
 
   song = input("Song name: ")
   artist = input("Artist name: ")
+
   results = sp.search(q= f"track: {song} artist: {artist}")
   #List of dictionaries where each dict is a song
   list = results["tracks"]["items"]
@@ -39,7 +40,6 @@ def main():
 
   song_data = []
   for x in list_song_data:
-    #print(sp.audio_features(track_uri)[0][x])
     song_data.append(sp.audio_features(track_uri)[0][x])
   
   #Get the artist spotify ID and use to search list of his/her genre(s)
@@ -52,8 +52,11 @@ def main():
                            mode = song_data[4], speechiness = song_data[5],
                            acousticness = song_data[6], instrulmentalness = song_data[7],
                            liveness = song_data[8], valence = song_data[9],
-                           temp = song_data[10], time_signature = song_data[11], popularity = 25)
+                           temp = song_data[10], time_signature = song_data[11], popularity = 50)
+  
   print("\n")
+
+
   for x in recommendations["tracks"]:
     print(x["name"] + " " + x["artists"][0]["name"])
 
@@ -63,10 +66,6 @@ def main():
 
 if __name__ == "__main__":
   main()
-
-
-#once user picks a songs, find that songs data and store it. Then use spotyify category_playlist function
-#to find a playlist of similar songs. Then interate through the playlist and compare song data with stored data.
 
 
 
