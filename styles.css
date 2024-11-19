@@ -4,7 +4,8 @@
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     width: 100vw;
     background-color: #121212;
@@ -13,10 +14,35 @@ body{
 }
 
 .search{
+    --padding: 10px;
     width: max-content;
     display: flex;
     align-items: center;
+    background-color: #333;
+    padding: var(--padding);
+    border-radius: 4rem;
+
 }
+
+.search-input{
+    width: 40vw;
+    height: 100%;
+    padding: var(--padding);
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    background: transparent;
+}
+
+
+.search-input::placeholder{
+    color: #c9c9c9
+}
+img{
+    size:18px;
+}
+
 
 /* 
 
